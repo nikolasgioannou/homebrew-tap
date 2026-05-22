@@ -1,28 +1,28 @@
 class Baton < Formula
   desc "Share Claude Code conversations with others"
   homepage "https://github.com/nikolasgioannou/baton"
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/nikolasgioannou/baton/releases/download/v#{version}/baton-darwin-arm64"
-      sha256 "ea78d39885cc6d7907aa146cabe28bd969bb1035b7b815b2c98e23c26d788f35"
+      sha256 "159e151d92173dc771bb44c52db711d9e77527a35db0dc22fa485890a1ecd189"
     end
     on_intel do
       url "https://github.com/nikolasgioannou/baton/releases/download/v#{version}/baton-darwin-x64"
-      sha256 "48fdf45d1e1bf5465145e41bd4a0a9d560cd5cc760a6091ddc51279b28de0166"
+      sha256 "851eb638752325f05d9f2481471f706c0089e7082d2969e9f9f3fdbcf4ede9ae"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/nikolasgioannou/baton/releases/download/v#{version}/baton-linux-arm64"
-      sha256 "9e52ef2a53fa4db688084a34da1bf38066216c34d5a2e74eefd9e11d4401720c"
+      sha256 "5ba355ca420673949817541ca33b5fd0f8b38fb7bae370d2a5c1d486814aaea6"
     end
     on_intel do
       url "https://github.com/nikolasgioannou/baton/releases/download/v#{version}/baton-linux-x64"
-      sha256 "980876e6d8b1723402871c428a8d6b009b506b5d6cd1480b0befca5fe1b28ff0"
+      sha256 "e8cdd394c849115a0d5f8c42f685ba9d02878dfcfd79b6dd3c9a93c11a953182"
     end
   end
 
