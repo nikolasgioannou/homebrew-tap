@@ -37,12 +37,12 @@ done
 
 # rewrite version and the four sha256 lines. python keeps this portable across
 # bsd/gnu sed and lets us match the exact platform near each sha256.
-python3 - "$FORMULA_FILE" "$VERSION" \
+python3 - "$FORMULA_FILE" "$FORMULA" "$VERSION" \
   "${SHA[darwin-arm64]}" "${SHA[darwin-x64]}" \
   "${SHA[linux-arm64]}"  "${SHA[linux-x64]}" <<'PY'
 import re, sys, pathlib
 
-path, version, sha_darwin_arm64, sha_darwin_x64, sha_linux_arm64, sha_linux_x64 = sys.argv[1:]
+path, formula, version, sha_darwin_arm64, sha_darwin_x64, sha_linux_arm64, sha_linux_x64 = sys.argv[1:]
 src = pathlib.Path(path).read_text()
 
 src = re.sub(r'^(\s*version\s+")[^"]+(")', rf'\g<1>{version}\g<2>', src, count=1, flags=re.M)
@@ -57,10 +57,10 @@ def replace_block(text, asset, new_sha):
         raise SystemExit(f"could not find sha256 for {asset}")
     return new
 
-src = replace_block(src, "baton-darwin-arm64", sha_darwin_arm64)
-src = replace_block(src, "baton-darwin-x64",   sha_darwin_x64)
-src = replace_block(src, "baton-linux-arm64",  sha_linux_arm64)
-src = replace_block(src, "baton-linux-x64",    sha_linux_x64)
+src = replace_block(src, f"{formula}-darwin-arm64", sha_darwin_arm64)
+src = replace_block(src, f"{formula}-darwin-x64",   sha_darwin_x64)
+src = replace_block(src, f"{formula}-linux-arm64",  sha_linux_arm64)
+src = replace_block(src, f"{formula}-linux-x64",    sha_linux_x64)
 
 pathlib.Path(path).write_text(src)
 PY
