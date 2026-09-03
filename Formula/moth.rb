@@ -1,28 +1,28 @@
 class Moth < Formula
   desc "Opinionated issue tracker that lives in your repo, as markdown files"
   homepage "https://github.com/nikolasgioannou/moth"
-  version "0.3.1"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/nikolasgioannou/moth/releases/download/v#{version}/moth-darwin-arm64"
-      sha256 "6647b4ec7d66ac586aaacce3318d394f5009d9e42b6031a6dd77ee8fde3a4c74"
+      sha256 "4ff26ab3766138169751f95d23e108d0c1b5da6bc861007301c7c52e043ad514"
     end
     on_intel do
       url "https://github.com/nikolasgioannou/moth/releases/download/v#{version}/moth-darwin-x64"
-      sha256 "9443611d804220a7907f9055cc5b16f1dd825cc55f9ed6a6d45c34fe1668a004"
+      sha256 "e7d8895a053644e1dc533131488103f926dfadba73a8389c7437c62cee472b9b"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/nikolasgioannou/moth/releases/download/v#{version}/moth-linux-arm64"
-      sha256 "656f5f3bf41b5e03555c0b2f905da9d0a6597ebd40f72426cc008f088b17a126"
+      sha256 "b67b3b9ed0e3e232616d25d117243413eec0bbb242467e94b66ccd41204f17db"
     end
     on_intel do
       url "https://github.com/nikolasgioannou/moth/releases/download/v#{version}/moth-linux-x64"
-      sha256 "cf3f8dff907d04dabbad516572334fa5866da79ee04d7e26c7208459cd5a98df"
+      sha256 "13248db8455b62d5f65cea8fb60f229c92c9cfb05e7f4bed1ca07acfc9f6ac99"
     end
   end
 
